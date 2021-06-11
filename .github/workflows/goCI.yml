@@ -8,6 +8,7 @@ jobs: # job to execute on event
     name: My Job
     runs-on: ubuntu-latest #specify OS in VM
     steps:
+    
     - name: Print a greeting
       run: |
         ls
@@ -18,6 +19,15 @@ jobs: # job to execute on event
       with:
         # The Go version to download (if necessary) and use. Supports semver spec and ranges.
         go-version: 1.16.5 # optional
+        
     - name: Show Go version # verify that Go is installed properly
       run: |
         go version # show go version
+        
+    - name: Checkout our codes # bring repo code to virtual envinronment
+      uses: actions/checkout@v2
+      
+    - name: Check file system # check virtual environment has the files
+      run: |
+        ls
+        cat calc.go # prints the content of calc.go
