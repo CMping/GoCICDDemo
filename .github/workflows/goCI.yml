@@ -91,7 +91,7 @@ jobs: # job to execute on event
         token: ${{ secrets.TELEGRAM_TOKEN }}
         message: |
           The ${{ github.event_name }} event triggered final step.
-          echo A push event is triggered.
+          echo A push event is trigger.
      
     - if: ${{ failure() }} 
       name: Create issue notifications
